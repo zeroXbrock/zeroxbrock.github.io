@@ -3,10 +3,16 @@
     <script type="application/javascript">
         const urlParams = new URLSearchParams(window.location.search);
         const data = urlParams.get('data');
+        const rpc = "http://experi-Proxy-cDzRHZCY6czr-74615020.us-east-2.elb.amazonaws.com"
         if (data) {
             document.body.innerHTML = `
-            <p>RPC URL: http://experi-Proxy-cDzRHZCY6czr-74615020.us-east-2.elb.amazonaws.com</p>
-            <p>private key: ${data}</p>`;
+            <code>
+                cargo install --git https://github.com/flashbots/contender
+            </code>
+            <br />
+            <code>
+                contender run fill-block ${rpc} -p ${data}
+            </code>`;
         }
     </script>
 </body>
